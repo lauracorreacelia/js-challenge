@@ -1,15 +1,15 @@
 
 export const students = [{
-    age: 35,
+    age: 32,
     examScores: [],
     gender: 'male',
-    name: 'pablo'
+    name: 'edu'
     },
     {
-    age: 39,
+    age: 29,
     examScores: [],
     gender: 'female',
-    name: 'luisa'
+    name: 'silvia'
     },
 
 ]
@@ -26,27 +26,33 @@ const optionsText = '\n\nEscribe un número de la siguiente lista para acceder a
 
 
 
-// FUNCTIONS
+// Funciones:
 
-// Muestra el texto con las opciones al usuario antes de cada input.
+// Muestra las opciones antes de cada input:
+
 export const showOptions = () => {
     console.log(optionsText)
 }
 
-// Comprueba si el input es un número.
+// Calcula un número aleatorio:
+
+export function calculateRandomNumber(min, max) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randomNumber;
+}
+
+// Comprueba si el input es un número:
+
 export const isInt = (num) => {
     return !Number.isNaN(num)
 }
 
-// Calcula un número aleatorio 
-export function calculateRandomNumber(min, max) {
-const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-return randomNumber;
-}
 
-// Suma un punto extra a cada alumno en cada una de sus notas. 
+
+// Suma un punto extra a cada alumno en cada una de sus notas:
     // Si no tiene ninguna nota, le añade  un 10
     // Maxima puntuación: 10
+
 export const sumExtraPoints = () => {
     
     for (let i = 0; i < students.length; i++) {
